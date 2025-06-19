@@ -5,7 +5,9 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class Bloc {
+    //MR Attribut doit être static
     public final int NBRE_DEMI_JOURS_SEMAINE = 10;
+    //MR Les deux attributs ci-dessous peuvent être final
     private String nom;
     private ModuleInfo[] modules;
 
@@ -23,6 +25,7 @@ public class Bloc {
         return nom;
     }
 
+    //MR Ta méthode est juste, mais si il n'y a pas assez de place, il planifie tout de même les premiers modules
     public boolean planifierModule(ModuleInfo module) {
         boolean planificationReussi = false;
         int count = 0;
@@ -62,6 +65,7 @@ public class Bloc {
 
     }
 
+    //MR C'est l'inverse, il faut vérifier si au moins un module est null et ça fait false
     public boolean estTotalementPlanifie() {
         boolean estPlanifie = false;
         for (int i = 0; i < modules.length; i++) {

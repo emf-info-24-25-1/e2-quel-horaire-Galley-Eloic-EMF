@@ -2,6 +2,7 @@ package models;
 
 public class Horaire {
     public final int NBRE_DE_BLOCS = 6;
+    //MR aurait pu être final
     private Bloc[] blocs;
 
     public Horaire() {
@@ -21,6 +22,7 @@ public class Horaire {
     }
 
     public boolean planifier(ModuleInfo[] modules, Professeur[] profs) {
+       //MR Voir correction car il y a deux étapes différentes.
         boolean planificationReussi = false;
         for (int i = 0; i < modules.length; i++) {
             for (int j = 0; j < profs.length; j++) {
@@ -47,6 +49,7 @@ public class Horaire {
     public Bloc moduleDansQuelBloc(ModuleInfo module){
         int count = 0;
         for (int i = 0; i < blocs.length; i++) {
+            //MR il commence à 1, donc le premier n'est jamais testé
             count++;
             if (blocs[i].contientModule(module)) {
                 break;

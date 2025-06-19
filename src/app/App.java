@@ -27,12 +27,15 @@ public class App {
 
         do {
             ServiceFormationMaitres.attribuerModules(profs, modules1ere);
+            // MR Attention tu appelles deux fois la méthose tousModulesCouverts
+            // Il faut récupérer le boolean et l'utiliser ensuite dans le while.
             ServiceFormationMaitres.tousModulesCouverts(profs, modules1ere);
         } while (!ServiceFormationMaitres.tousModulesCouverts(profs, modules1ere));
 
         System.out.println("l'ecole a engagé les professeurs suivants : ");
         for (int i = 0; i < profs.length; i++) {
             System.out.print("- " + profs[i] + " peut enseigner les modules : ");
+            //MR A quoi sert cette boucle et pourquoi tu nomme professeur ?
             for (ModuleInfo professeur : modules1ere) {
                 System.out.print(modules1ere[i].getNom());
             }

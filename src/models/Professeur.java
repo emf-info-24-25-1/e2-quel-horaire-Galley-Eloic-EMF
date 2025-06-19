@@ -1,6 +1,7 @@
 package models;
 
 public class Professeur {
+    //MR Manque les finals sur les deux premiers attributs
     private String nom;
     private String prenom;
     private ModuleInfo[] modulesEnseignes;
@@ -35,6 +36,7 @@ public class Professeur {
     }
 
     public void ajouterModuleEnseigne(ModuleInfo module) {
+        //MR regarde à nouveau le code pour ajouter dans un tableau dynamique
         ModuleInfo[] tableauTemp = new ModuleInfo[modulesEnseignes.length + 1];
         tableauTemp = modulesEnseignes;
         for (int i = 0; i < tableauTemp.length; i++) {
@@ -47,6 +49,7 @@ public class Professeur {
     }
 
     public void viderModules() {
+        //MR Il faut que le tableau soit de nouveau de taille 0
         for (int i = 0; i < modulesEnseignes.length; i++) {
             modulesEnseignes[i] = null;
         }

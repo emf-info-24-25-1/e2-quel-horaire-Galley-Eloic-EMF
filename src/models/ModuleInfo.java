@@ -1,6 +1,7 @@
 package models;
 
 public class ModuleInfo {
+    // MR Manque le final
     private String nom;
     private Professeur professeur;
 
@@ -23,6 +24,7 @@ public class ModuleInfo {
 
     @Override
     public String toString(){
+        //MR Par rapport aux enseignements EMF, il est mieux d'avoir qu'un return à la fin de la méthode.
         if (professeur != null) {
             return nom + " avec " + professeur.getPrenom() + professeur.getNom();
         }else{
